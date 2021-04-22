@@ -1,7 +1,11 @@
 <% provide(:title, "Home") %>
-<h1>Sample App</h1>
-<p>
-  This is the home page for the
-  <a href="https://www.railstutorial.org/">Ruby on Rails Tutorial</a>
-  sample application.
-</p>
+<div class="center jumbotron">
+  <h1>Welcome to RAD 2021<%= (" " + @name) if @name %>!</h1>
+  <a href="https://www.rmit.edu.au/"> Visit me here</a>
+  <%= form_tag action: 'home' do %>
+    <p> Your name:
+      <%= text_field_tag 'visitor_name', @name %> </p>
+    <%= submit_tag 'Enter' %>
+  <% end %>
+<!--  <p><%#= link_to "Login now!", '#', class: "btn btn-lg btn-primary" %></p>-->
+</div>
